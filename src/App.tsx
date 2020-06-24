@@ -37,7 +37,7 @@ const hex2hsv = (hex: string) => {
     h /= 6;
   }
 
-  return [h * 360, s, v] ;
+  return [h * 360, s, v];
 };
 
 const distinguishHue = (hsv: number[]) => {
@@ -55,7 +55,7 @@ const distinguishHue = (hsv: number[]) => {
   if (170 <= h && h <= 220) return 'ライトブルー';
   if (210 <= h && h <= 270) return 'ダークブルー';
   if (260 <= h && h <= 300) return 'パープル';
-  if (290 <= h && h <= 340) return 'ピンク';
+  if (290 <= h && h <= 350) return 'ピンク';
   return '白黒';
 };
 
