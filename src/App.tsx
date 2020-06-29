@@ -42,20 +42,20 @@ const hex2hsv = (hex: string) => {
 
 const distinguishHue = (hsv: number[]) => {
   const [h, s, v] = hsv;
-  if (s < .1 || v < .2) return '白黒';
+  if (s < .02 || v < .19) return '白黒';
 
-  const y = 4 ** (-2 * s);
+  const y = 5 ** (-6 * s);
   if (v < y) return '白黒';
 
-  if ((0 <= h && h <= 40) || (340 <= h && h <= 360)) return 'レッド';
-  if (30 <= h && h <= 60) return 'オレンジ';
-  if (40 <= h && h <= 90) return 'イエロー';
-  if (80 <= h && h <= 160) return 'グリーン';
-  if (150 <= h && h <= 180) return '青緑';
-  if (170 <= h && h <= 220) return 'ライトブルー';
-  if (210 <= h && h <= 270) return 'ダークブルー';
-  if (260 <= h && h <= 300) return 'パープル';
-  if (290 <= h && h <= 350) return 'ピンク';
+  if ((0 <= h && h <= 22) || (345 <= h && h <= 360)) return 'レッド';
+  if (20 <= h && h <= 45) return 'オレンジ';
+  if (40 <= h && h <= 72) return 'イエロー';
+  if (70 <= h && h <= 162) return 'グリーン';
+  if (160 <= h && h <= 177) return '青緑';
+  if (175 <= h && h <= 210) return 'ライトブルー';
+  if (208 <= h && h <= 255) return 'ダークブルー';
+  if (250 <= h && h <= 300) return 'パープル';
+  if (295 <= h && h <= 350) return 'ピンク';
   return '白黒';
 };
 
