@@ -5,7 +5,25 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "start": "webpack-dev-server --config webpack.config.js --hot"
+    "start": "webpack-dev-server --config webpack.config.js --hot",
+    "test": "jest --watchAll"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js?|ts?)$",
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ]
   },
   "dependencies": {
     "react": "^16.13.1",
@@ -13,9 +31,12 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.3",
     "@types/react": "^16.9.41",
     "@types/react-color": "^3.0.4",
     "@types/react-dom": "^16.9.8",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.5",
     "webpack": "^4.43.0",
